@@ -65,22 +65,24 @@
 </head>
 <body>
 
-  <audio id="bgMusic" loop autoplay muted>
+  <!-- Musik dengan autoplay dan muted (dibuka saat klik) -->
+  <audio id="bgMusic" autoplay muted loop>
     <source src="audio/background_music.mp3" type="audio/mp3">
     Browser Anda tidak mendukung audio.
   </audio>
   <div id="musicControl" title="Toggle Musik 🎵">🔈</div>
 
   <div id="app"></div>
-
   <div class="floating-letters" id="letterContainer"></div>
 
+  <!-- JS Page Logic -->
   <script src="js/index.js"></script>
   <script src="js/auth.js"></script>
   <script src="js/level-select.js"></script>
   <script src="js/game.js"></script>
   <script src="js/admin.js"></script>
 
+  <!-- SPA Routing dan Audio Logic -->
   <script>
     const routes = {
       '': 'spa_parts/index.html',
@@ -99,10 +101,8 @@
       document.getElementById('app').innerHTML = html;
       window.scrollTo(0, 0);
 
-      // Selalu bersihkan floating letters sebelum inisialisasi ulang jika berlaku
       clearFloatingLetters(); 
 
-      // Panggil fungsi inisialisasi yang sesuai setelah konten halaman dimuat
       if (hash === '' || hash === '#index') {
         initIndexPage();
       } else if (hash === '#auth') {
@@ -116,34 +116,29 @@
       }
     }
 
-    // Fungsi untuk membersihkan floating letters (tetap di app.html karena mengelola container global)
     function clearFloatingLetters() {
       const container = document.getElementById('letterContainer');
-      if (container) {
-        container.innerHTML = '';
-      }
+      if (container) container.innerHTML = '';
     }
 
-    // Event listeners untuk SPA router dan musik (tetap di sini)
     window.addEventListener('hashchange', loadPage);
     window.addEventListener('load', () => {
       loadPage();
+
       const bgMusic = document.getElementById('bgMusic');
       const musicControl = document.getElementById('musicControl');
       let musicPlaying = false;
 
-      // Mencoba memutar musik otomatis, jika gagal, tambahkan event listener untuk interaksi pengguna
-      bgMusic.play().catch(() => {
-        document.body.addEventListener('click', startMusicOnce, { once: true });
-        document.body.addEventListener('touchstart', startMusicOnce, { once: true });
-      });
-
-      function startMusicOnce() {
+      const startMusicOnce = () => {
         bgMusic.muted = false;
         bgMusic.play();
         musicControl.textContent = '🔊';
         musicPlaying = true;
-      }
+      };
+
+      // Interaksi awal pengguna (untuk memulai musik)
+      document.body.addEventListener('click', startMusicOnce, { once: true });
+      document.body.addEventListener('touchstart', startMusicOnce, { once: true });
 
       musicControl.onclick = () => {
         if (musicPlaying) {
