@@ -1,0 +1,45 @@
+/* css/level-select.css */
+.level-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  gap: 15px;
+}
+
+.level-btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.level-btn:hover {
+  background-color: #2980b9;
+}
+
+.level-btn.completed {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+/* Gaya untuk tombol logout */
+#logout {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+#logout:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}

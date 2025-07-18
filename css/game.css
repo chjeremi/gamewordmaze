@@ -1,0 +1,86 @@
+/* css/game.css */
+:root {
+  --cell-size: clamp(30px, 8vw, 60px);
+  --font-size: clamp(16px, 4vw, 22px);
+}
+h1 {
+  margin-top: 10px;
+  color: #2c3e50;
+  font-size: 2em;
+}
+#grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  margin: 20px auto;
+  gap: 5px;
+  touch-action: none;
+  max-width: 95vw;
+}
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  border: 2px solid #3498db;
+  font-size: var(--font-size);
+  line-height: var(--cell-size);
+  cursor: pointer;
+  user-select: none;
+  background: white;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}
+.cell:hover {
+  background-color: #f0f9ff;
+}
+.found {
+  background-color: #a0e7a0;
+  color: white;
+  font-weight: bold;
+}
+.selected {
+  background-color: #d0e8ff;
+}
+#word-list {
+  margin: 10px auto;
+  max-width: 90vw;
+  text-align: left;
+  font-size: 1em;
+}
+#score, #levelDisplay {
+  margin-top: 5px;
+  font-weight: bold;
+  color: #34495e;
+}
+button { /* Tombol umum di game page */
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+#nextLevelBtn {
+  display: none;
+  background-color: #27ae60;
+}
+#nextLevelBtn:hover {
+  background-color: #218838;
+}
+#logout {
+  background-color: #dc3545;
+}
+#logout:hover {
+  background-color: #c82333;
+}
+@media (max-width: 500px) {
+  h1 { font-size: 1.5em; }
+  button { font-size: 0.9em; padding: 8px 15px; }
+}

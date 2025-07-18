@@ -1,0 +1,32 @@
+/* css/auth.css */
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  margin: 50px auto;
+  font-family: sans-serif;
+}
+.card input {
+  margin: 0.5rem 0;
+  padding: 0.7rem;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.card button {
+  padding: 0.7rem;
+  background: dodgerblue;
+  color: white;
+  border: none;
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.toggle-link {
+  color: blue;
+  cursor: pointer;
+}
