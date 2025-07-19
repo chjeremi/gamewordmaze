@@ -28,7 +28,7 @@ function initAuthPage() {
     const password = document.getElementById('loginPassword').value;
 
     try {
-      const response = await fetch('https://gamewordmaze.nasiuduklapangantenis.my.id/api/login', {
+      const response = await fetch('wordmaze.nasiuduklapangantenis.my.id/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ function initAuthPage() {
     const password = document.getElementById('registerPassword').value;
 
     try {
-      const response = await fetch('https://gamewordmaze.nasiuduklapangantenis.my.id/api/register', {
+      const response = await fetch('wordmaze.nasiuduklapangantenis.my.id/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
