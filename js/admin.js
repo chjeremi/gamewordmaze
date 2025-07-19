@@ -26,7 +26,7 @@ function initAdminPage() {
         return;
       }
 
-      const res = await fetch('wordmaze.nasiuduklapangantenis.my.id/api/level', {
+      const res = await fetch('https://wordmaze.nasiuduklapangantenis.my.id/api/level', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
