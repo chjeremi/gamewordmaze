@@ -34,7 +34,7 @@ function initGamePage() {
   if (nextLevelBtn) nextLevelBtn.style.display = 'none';
 
   async function loadLevel(currentLevel) {
-    const res = await fetch(`wordmaze.nasiuduklapangantenis.my.id/api/level/${currentLevel}`);
+    const res = await fetch(`https://wordmaze.nasiuduklapangantenis.my.id/api/level/${currentLevel}`);
     if (!res.ok) return alert('Level tidak tersedia!');
     const data = await res.json();
 
@@ -241,7 +241,7 @@ function initGamePage() {
       if (levelDisplayElement) levelDisplayElement.innerText = `Level ${level}`;
       if (nextLevelBtn) nextLevelBtn.style.display = 'none';
 
-      await fetch('wordmaze.nasiuduklapangantenis.my.id/api/user/last-level', {
+      await fetch('https://wordmaze.nasiuduklapangantenis.my.id/api/user/last-level', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
